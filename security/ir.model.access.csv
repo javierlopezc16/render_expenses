@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_terminal,access_terminal.stock_extension,stock_extension.model_terminal_terminal,,1,1,1,1
+access_temperature,access_temperature.stock_extension,stock_extension.model_temperature_temperature,,1,1,1,1
+

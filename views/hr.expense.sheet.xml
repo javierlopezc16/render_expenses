@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+
+    <record id="hr_expense_view_sheet_form_extension" model="ir.ui.view">
+      <field name="name">hr.expense.view.sheet.form.extension</field>
+      <field name="model">hr.expense.sheet</field>
+      <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+      <field name="mode">extension</field>
+      <field name="arch" type="xml">
+        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='expenses']/field[@name='expense_line_ids']/tree[1]/field[@name='attachment_number']" position="after">
+          <field optional="show" name="account_move_id"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="backlog" model="project.task.type">
+        <field name="name">Backlog</field>
+    </record>
+    <record id="to_do" model="project.task.type">
+        <field name="name">Por hacer</field>
+    </record>
+    <record id="in_progress" model="project.task.type">
+        <field name="name">En proceso</field>
+    </record>
+    <record id="ready" model="project.task.type">
+        <field name="name">Listo</field>
+    </record>
+    <record id="accepted" model="project.task.type">
+        <field name="name">Aceptado</field>
+        <field name="is_closed">True</field>
+    </record>
+    <record id="not_applied" model="project.task.type">
+        <field name="name">No aplica</field>
+    </record>
+    <record id="canceled" model="project.task.type">
+        <field name="name">Cancelado</field>
+    </record>
+    <record id="followers_portal" model="ir.rule">
+        <field name="name">Project: portal users: portal and employees</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="model_id" ref="model_project_project"/>
+        <field name="domain_force">[
+            '&amp;',
+                ('privacy_visibility', '=', 'followers_portal'),
+                ('message_partner_ids', 'child_of', [user.partner_id.id])]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_portal')), (4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="banorte_oro" model="account.journal">
+        <field name="name">Banorte Oro</field>
+        <field name="type">bank</field>
+        <field name="code">BANOR</field>
+    </record>
+
+    <record id="banorte_porti" model="account.journal">
+        <field name="name">Banorte PorTi</field>
+        <field name="type">bank</field>
+        <field name="code">BNORP</field>
+    </record>
+
+    <record id="banorte_millage" model="account.journal">
+        <field name="name">Banorte Millage</field>
+        <field name="type">bank</field>
+        <field name="code">BNORM</field>
+    </record>
+
+    <record id="banorte_debito" model="account.journal">
+        <field name="name">Banorte Débito</field>
+        <field name="type">bank</field>
+        <field name="code">BNORD</field>
+    </record>
+
+    <record id="banamex_platino" model="account.journal">
+        <field name="name">Banamex Platino</field>
+        <field name="type">bank</field>
+        <field name="code">BMXPL</field>
+    </record>
+
+    <record id="banamex_premier" model="account.journal">
+        <field name="name">Banamex Premier</field>
+        <field name="type">bank</field>
+        <field name="code">BMXPR</field>
+    </record>
+
+    <record id="banamex_premier" model="account.journal">
+        <field name="name">Banamex Debito</field>
+        <field name="type">bank</field>
+        <field name="code">BMXDE</field>
+    </record>
+
+    <record id="santander_black" model="account.journal">
+        <field name="name">Santander Black</field>
+        <field name="type">bank</field>
+        <field name="code">BNSTR</field>
+    </record>
+
+    <record id="santander_black" model="account.journal">
+        <field name="name">Santander Black</field>
+        <field name="type">bank</field>
+        <field name="code">BNSTB</field>
+    </record>
+
+    <record id="santander_free" model="account.journal">
+        <field name="name">Santander Free</field>
+        <field name="type">bank</field>
+        <field name="code">BNSTF</field>
+    </record>
+
+    <record id="santander_fiesta" model="account.journal">
+        <field name="name">Santander Fiesta</field>
+        <field name="type">bank</field>
+        <field name="code">BNSFI</field>
+    </record>
+
+    <record id="santander_debito" model="account.journal">
+        <field name="name">Santander Débito</field>
+        <field name="type">bank</field>
+        <field name="code">BNSTD</field>
+    </record>
+
+    <record id="hsbc_debito" model="account.journal">
+        <field name="name">HSBC Débito</field>
+        <field name="type">bank</field>
+        <field name="code">BNHSD</field>
+    </record>
+
+    <record id="hsbc_2now" model="account.journal">
+        <field name="name">HSBC 2NOW</field>
+        <field name="type">bank</field>
+        <field name="code">BNHS2</field>
+    </record>
+
+    <record id="hsbc_air" model="account.journal">
+        <field name="name">HSBC AIR</field>
+        <field name="type">bank</field>
+        <field name="code">BNHSA</field>
+    </record>
+
+    <record id="hsbc_zero" model="account.journal">
+        <field name="name">HSBC ZERO</field>
+        <field name="type">bank</field>
+        <field name="code">BNHSZ</field>
+    </record>
+
+    <record id="bbva_debito" model="account.journal">
+        <field name="name">BBVA Débito</field>
+        <field name="type">bank</field>
+        <field name="code">BNBBD</field>
+    </record>
+
+    <record id="bbva_platino" model="account.journal">
+        <field name="name">BBVA Platino</field>
+        <field name="type">bank</field>
+        <field name="code">BNBBP</field>
+    </record>
+
+    <record id="invex" model="account.journal">
+        <field name="name">Invex</field>
+        <field name="type">bank</field>
+        <field name="code">BNINV</field>
+    </record>
+
+    <record id="inbursa_debito" model="account.journal">
+        <field name="name">Inbursa Débito</field>
+        <field name="type">bank</field>
+        <field name="code">BNINB</field>
+    </record>
+
+    <record id="inbursa_amex" model="account.journal">
+        <field name="name">Inbursa Amex</field>
+        <field name="type">bank</field>
+        <field name="code">BNINA</field>
+    </record>
+
+    <record id="bbva_grupo_eb" model="account.journal">
+        <field name="name">BBVA GRUPO EB</field>
+        <field name="type">bank</field>
+        <field name="code">BBBEB</field>
+    </record>
+
+    <record id="caja_chica" model="account.journal">
+        <field name="name">Caja chica</field>
+        <field name="type">cash</field>
+        <field name="code">CCHIC</field>
+    </record>
+
+   <!-- <record id="technical_summary_project_report" model="ir.actions.report">
+        <field name="name">Reporte Proyecto</field>
+        <field name="model">project.project</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">zublime_customerzublime.report_project_document_zublime</field>
+        <field name="report_file">zublime_customerzublime.report_project_document_zublime</field>
+        <field name="binding_model_id" ref="model_project_project"/>
+        <field name="binding_type">report</field>
+    </record>-->
+
+    <!--<record id="ir_module_reference_print" model="ir.actions.report">
+            <field name="name">Technical guide</field>
+            <field name="model">ir.module.module</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">base.report_irmodulereference</field>
+            <field name="report_file">base.report_irmodulereference</field>
+            <field name="binding_model_id" ref="model_ir_module_module"/>
+            <field name="binding_type">report</field>
+        </record>-->
+
+
+</odoo>
