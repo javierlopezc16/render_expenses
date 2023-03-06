@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+
+    <record id="view_account_journal_form_extension" model="ir.ui.view">
+      <field name="name">view.account.journal.form.extension</field>
+      <field name="model">account.journal</field>
+      <field name="inherit_id" ref="account.view_account_journal_form"/>
+      <field name="mode">extension</field>
+      <field name="arch" type="xml">
+        <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='type']" position="after">
+          <field name="is_re_journal" attrs="{'invisible': [('type','in', ['sale','purchase','general'])]}"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

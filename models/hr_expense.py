@@ -17,18 +17,18 @@ class HrExpenseSheet(models.Model):
             if line.account_move_id:
                 total_payment += line.total_amount
 
-        account_move = {
-            'ref': 'Fondos por rendir',
-            'date': fields.today(),
-            'journal_id': 'Miscelaneous operations'
-        }
-
-        lines = {
-            'account_id':,
-            'name':,
-            'debit':,
-            'credit':
-        }
+        # account_move = {
+        #     'ref': 'Fondos por rendir',
+        #     'date': fields.today(),
+        #     'journal_id': 'Miscelaneous operations'
+        # }
+        #
+        # lines = {
+        #     'account_id':,
+        #     'name':,
+        #     'debit':,
+        #     'credit':
+        # }
 
 
 

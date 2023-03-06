@@ -15,16 +15,17 @@
     'category': 'Human Resources/Expenses',
     'version': '0.1',
 
-    # any module necessary for this one to work correctly
     'depends': [
         'hr_expense',
     ],
 
-    # always loaded
     'data': [
         'views/hr.expense.xml',
         'views/hr.expense.sheet.xml',
+        'views/account.payment.view.re.xml',
+        'views/account.journal.menu.xml',
+        'views/account.journal.xml',
+        'views/render.expenses.menu.xml',
     ],
-    # only loaded in demonstration mode
 
 }
